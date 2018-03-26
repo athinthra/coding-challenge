@@ -28,7 +28,20 @@ public class Runner {
             System.exit(1);
         }
 
-        System.out.println("Do cool stuff here!!");
+        else
+        {
+        	String filePath = args[0];
+        	FileParser process = new FileParser(filePath);
+        	try
+        	{
+        		process.fileAnalyzer(filePath);
+        		process.getPopulation().printResults();
+        	}catch(Exception e)
+        	{
+        		e.printStackTrace();
+        	}
+        	
+        }     
 
     }
 }
